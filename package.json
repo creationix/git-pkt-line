@@ -1,6 +1,6 @@
 {
   "name": "git-pkt-line",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "pkt-line encoder and decoder as min-stream",
   "main": "pkt-line.js",
   "scripts": {

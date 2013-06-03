@@ -57,17 +57,17 @@ var messages2 = [
 ];
 
 var framed = [
-  "002bgit-upload-pack /js-git\0host=localhost\0",
-  "00ad52bc15b3e685afe74f8331bade5ed992b8aeedee HEAD\0multi_ack thin-pack side-band side-band-64k ofs-delta shallow no-progress include-tag multi_ack_detailed agent=git/1.8.1.2\n",
-  "003f52bc15b3e685afe74f8331bade5ed992b8aeedee refs/heads/master\n",
-  "004652bc15b3e685afe74f8331bade5ed992b8aeedee refs/remotes/origin/HEAD\n",
-  "004852bc15b3e685afe74f8331bade5ed992b8aeedee refs/remotes/origin/master\n",
+  "002b","git-upload-pack /js-git\0host=localhost\0",
+  "00ad","52bc15b3e685afe74f8331bade5ed992b8aeedee HEAD\0multi_ack thin-pack side-band side-band-64k ofs-delta shallow no-progress include-tag multi_ack_detailed agent=git/1.8.1.2\n",
+  "003f","52bc15b3e685afe74f8331bade5ed992b8aeedee refs/heads/master\n",
+  "0046","52bc15b3e685afe74f8331bade5ed992b8aeedee refs/remotes/origin/HEAD\n",
+  "0048","52bc15b3e685afe74f8331bade5ed992b8aeedee refs/remotes/origin/master\n",
   "0000",
   "0004",
-  "0007hi\n",
-  "0032want 0000000000000000000000000000000000000000\n",
+  "0007","hi\n",
+  "0032","want 0000000000000000000000000000000000000000\n",
   "0000",
-  "001bhi\0ofs-delta hat party\n",
+  "001b","hi\0ofs-delta hat party\n",
   "PACKhelloworld",
   "this is a long binary blob right? Right!"
 ];

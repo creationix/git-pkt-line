@@ -99,21 +99,24 @@ exports.framer = function (emit) {
       packMode = true;
       return;
     }
-    var length = item.length + 4;
-    var buf = bops.create(length);
-    buf[0] = toHexChar(length >>> 12);
-    buf[1] = toHexChar((length >>> 8) & 0xf);
-    buf[2] = toHexChar((length >>> 4) & 0xf);
-    buf[3] = toHexChar(length & 0xf);
-    for (var i = 4; i < length; i++) {
-      buf[i] = item[i - 4];
-    }
-    emit(null, buf);
+    emit(null, frameHead(item));
+    if (item.length) emit(null, item);
   };
   fn.is = "min-stream-write";
   return fn;
 };
 exports.framer.is = "min-stream-push-filter";
+
+exports.frameHead = frameHead;
+function frameHead(item) {
+  var length = item.length + 4;
+  var buf = bops.create(4);
+  buf[0] = toHexChar(length >>> 12);
+  buf[1] = toHexChar((length >>> 8) & 0xf);
+  buf[2] = toHexChar((length >>> 4) & 0xf);
+  buf[3] = toHexChar(length & 0xf);
+  return buf;
+}
 
 function fromHexChar(val) {
   return (val >= 0x30 && val <  0x40) ? val - 0x30 :
